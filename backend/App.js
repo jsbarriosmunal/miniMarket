@@ -1,5 +1,6 @@
 /** Llamar dependencias */
 const express = require('express');
+const cors = require('cors');
 const { dbConnection } = require('./database/db.config');
 require ('dotenv').config();
 
@@ -9,8 +10,8 @@ const app = express ();
 /** Conectar BD */
 dbConnection();
 
-/** Utilizar CORS */
-//app.use(cors());
+/** Exponer el backend */
+app.use(cors());
 
 /** Definir directorio público */
 app.use(express.static('public'));

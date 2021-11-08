@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "71cab7a5-07ec-4c3f-814c-c7032a521718",
+		"name": "miniMarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"P005\",\r\n    \"product_description\" : \"Naranja 1.5 kg\",\r\n    \"product_unit_value\" : 2200,\r\n    \"product_availability\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/product/update/6180a5738402384b8e5b9df2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"product",
+								"update",
+								"6180a5738402384b8e5b9df2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"P005\",\r\n    \"product_description\" : \"Naranja 1.5 kg\",\r\n    \"product_unit_value\" : 3700,\r\n    \"product_availability\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/product/delete/6180a9e45c85cbf0fce99498",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"6180a9e45c85cbf0fce99498"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"P005\",\r\n    \"product_description\" : \"Naranja 1.5 kg\",\r\n    \"product_unit_value\" : 3200,\r\n    \"product_availability\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/product/add",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/products/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"products",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\" : \"Juan Borrar\",\r\n    \"user_email\" : \"juan.borrar@email.com\",\r\n    \"user_password\" : \"654321\",\r\n    \"user_role\" : \"61809bfd4885d65e296254dd\",\r\n    \"user_status\" : \"61809c634885d65e296254e2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/user/update/6180b151754d4863536946ec",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"update",
+								"6180b151754d4863536946ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"P005\",\r\n    \"product_description\" : \"Naranja 1.5 kg\",\r\n    \"product_unit_value\" : 3700,\r\n    \"product_availability\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/user/delete/6180b7e0af8540a54c2c464e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"6180b7e0af8540a54c2c464e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\" : \"Juan Borrar\",\r\n    \"user_email\" : \"juan.borrar@email.com\",\r\n    \"user_password\" : \"123456\",\r\n    \"user_role\" : \"61809bfd4885d65e296254dd\",\r\n    \"user_status\" : \"61809c634885d65e296254e2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/user/add",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "updateSale",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sale_id\" : \"V002\",\r\n    \"sale_total_value\" : \"60000\",\r\n    \"product_id\" : \"61809447b565e6c565d29096\",\r\n    \"product_quantity\" : 10,\r\n    \"product_unit_value\" : \"61809447b565e6c565d29096\",\r\n    \"client_id\" : \"123456789\",\r\n    \"client_name\" : \"Juan Comprador\",\r\n    \"seller_name\" : \"Juan Vendedor\",\r\n    \"sale_status\" : \"61845d53bfc64fe1129bd3eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/sale/update/61845df9470606dc01a16146",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sale",
+								"update",
+								"61845df9470606dc01a16146"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSale",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : \"P005\",\r\n    \"product_description\" : \"Naranja 1.5 kg\",\r\n    \"product_unit_value\" : 3700,\r\n    \"product_availability\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/sale/delete/61845df9470606dc01a16146",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sale",
+								"delete",
+								"61845df9470606dc01a16146"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sale_id\" : \"V001\",\r\n    \"sale_total_value\" : \"49000\",\r\n    \"product_id\" : \"6180941bb565e6c565d29094\",\r\n    \"product_quantity\" : 10,\r\n    \"product_unit_value\" : \"6180941bb565e6c565d29094\",\r\n    \"client_id\" : \"123456789\",\r\n    \"client_name\" : \"Juan Comprador\",\r\n    \"seller_name\" : \"Juan Vendedor\",\r\n    \"sale_status\" : \"61845d53bfc64fe1129bd3eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/sale/add",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sale",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listSales",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/sales/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sales",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

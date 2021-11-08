@@ -25,7 +25,7 @@ const addSale = async (req, res = response) => {
 /** CRUD-read */
 const listSales = async (req, res = response) => {
 	
-	const sales = await sale_model.find(); //.populate('field')
+	const sales = await sale_model.find();//.populate('product_id');
 	
 	res.status(200).json({
 		isOk: true,
