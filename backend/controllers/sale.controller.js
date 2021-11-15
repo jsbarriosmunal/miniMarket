@@ -5,7 +5,7 @@ const { sale_model } = require('../models');
 const addSale = async (req, res = response) => {
 	
 	const new_sale = new sale_model(req.body);
-	
+	console.log(new_sale)
 	try {
 		const sale = await new_sale.save();
 		res.status(200).json({
@@ -15,10 +15,10 @@ const addSale = async (req, res = response) => {
 		});
 	} catch (error) {
 		console.log(error);
-		res.status(500).json({
-			isOk: false,
-			mensaje: 'Error al crear la venta.'
-		});
+		res.status(500).json(error
+			// isOk: false,
+			// mensaje: 'Error al crear la venta.'
+		);
 	};
 }
 

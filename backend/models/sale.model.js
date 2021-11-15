@@ -8,14 +8,14 @@ const saleSchema = Schema({
     },
     sale_total_value: {
         type: Number,
-        required: true,
+        // required: true,
 		min: 1
     },
     product_id: {
-		type: Schema.Types.ObjectId,
-		ref: 'product',
-        required: true,
-		unique: true
+		type: String,
+		// ref: product,
+        required: true
+		// unique: true
     },
     product_quantity: {
         type: Number,
@@ -23,8 +23,8 @@ const saleSchema = Schema({
 		min: 1
     },
     product_unit_value: {
-		type: Schema.Types.ObjectId,
-		ref: 'product',
+        type: Number,
+		// ref: 'product',
         required: true,
 		min: 1
     },

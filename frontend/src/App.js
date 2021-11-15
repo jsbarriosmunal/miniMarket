@@ -1,4 +1,8 @@
 //import './App.css';
+import { useAuth0 } from "@auth0/auth0-react";
+// import { LoginButton } from "./LoginButton";
+import { LogoutButton } from "./LogoutButton";
+import { Profile } from "./Profile";
 import React from 'react'
 import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Logo from './img/miniMarketLogo.png';
@@ -10,7 +14,15 @@ import Team from './pages/Team';
 
 
 function App() {
+
+  const {isAuthenticated} = useAuth0();
+
   return (
+
+
+    <div classname="App">
+      {isAuthenticated ? (
+
     <Router>
       <div>
         <div>
@@ -19,7 +31,9 @@ function App() {
         </div>
         <ul className = 'header'>
           <li>
-            <Link to = '/'>Inicio</Link>
+            {/* <Link to = '/'>Inicio</Link> */}
+            <Profile />
+            <LogoutButton />
           </li>
           <li>
             <Link to = '/sales'>Ventas</Link>
@@ -36,7 +50,7 @@ function App() {
         </ul>
         <div className = 'content'>
           <Routes>
-            <Route path = '/' element = {<Login />} />
+            {/* <Route path = '/' element = {<Login />} /> */}
             <Route path = '/sales' element = {<Sales />} />
             <Route path = '/products' element = {<Products />} />
             <Route path = '/users' element = {<Users />} />
@@ -45,6 +59,16 @@ function App() {
         </div>
       </div>
     </Router>
+      ):(
+        <div>
+        <h1>¡Bienvenidos!</h1>
+        <img className="logo" src={Logo} alt = 'Logo' />
+          <div className ="login">
+          <Login />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

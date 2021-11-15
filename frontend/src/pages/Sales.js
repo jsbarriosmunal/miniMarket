@@ -29,9 +29,10 @@ function Sales() {
     const [sales, set_sales] = useState([]);
 
 const add_sale = () => {
+    console.log(product_unit_value_add)
     Axios.post('http://localhost:4000/api/sale/add', {
         sale_id: sale_id_add,
-        sale_total_value: sale_total_value_add,
+        sale_total_value: product_quantity_add*product_unit_value_add,
         product_id: product_id_add,
         product_quantity: product_quantity_add,
         product_unit_value: product_unit_value_add,
@@ -53,7 +54,7 @@ const update_sale = (_id) => {
     Axios.put('http://localhost:4000/api/sale/update/' + _id, {
         _id: _id,
         sale_id: sale_id_update,
-        sale_total_value: sale_total_value_update,
+        sale_total_value: product_quantity_update*product_unit_value_update,
         product_id: product_id_update,
         product_quantity: product_quantity_update,
         product_unit_value: product_unit_value_update,
@@ -79,11 +80,11 @@ const delete_sale = (_id) => {
                             onChange={(event) => { set_sale_id_add(event.target.value) }} />
                     </Form.Group>
 
-                    <Form.Group className='mb-3' controlId='formBasicSaleTotalValue'>
+                    {/* <Form.Group className='mb-3' controlId='formBasicSaleTotalValue'>
                         <Form.Label>Valor total venta</Form.Label>
-                        <Form.Control type='number' placeholder='Ingrese valor total venta de la venta'
+                        <Form.Control type='number' disabled="true" placeholder='Ingrese valor total venta de la venta'
                             onChange={(event) => { set_sale_total_value_add(event.target.value) }} />
-                    </Form.Group>
+                    </Form.Group> */}
 
                     <Form.Group className='mb-3' controlId='formBasicProductId'>
                         <Form.Label>ID producto</Form.Label>
@@ -132,7 +133,7 @@ const delete_sale = (_id) => {
 
                 <hr />
 
-                <Table striped bordered hover>
+                <Table striped bordered hover responsive>
                     <thead>
                         <tr>
                             <th>Nº</th>
@@ -157,10 +158,10 @@ const delete_sale = (_id) => {
                                         {key}
                                     </td>
                                     <td>{value.sale_id}</td>
-                                    <td>{value.sale_total_value}</td>
+                                    <td>{value.product_quantity*value.product_unit_value}</td>
                                     <td>{value.product_id}</td>
                                     <td>{value.product_quantity}</td>
-                                    <td>{value.product_unit_value.toString()}</td>
+                                    <td>{value.product_unit_value}</td>
                                     <td>{value.client_id}</td>
                                     <td>{value.client_name}</td>
                                     <td>{value.seller_name}</td>
@@ -169,16 +170,16 @@ const delete_sale = (_id) => {
                                         <Button variant='warning' onClick={() => {
                                             set_id_update(value._id);
                                             set_sale_id_update(value.sale_id);
-                                            set_sale_total_value_update(value.sale_total_value);
+                                            set_sale_total_value_update(value.product_quantity*value.product_unit_value);
                                             set_product_id_update(value.product_id);
                                             set_product_quantity_update(value.product_quantity);
-                                            set_product_unit_value_update(value.product_unit_value.toString());
+                                            set_product_unit_value_update(value.product_unit_value);
                                             set_client_id_update(value.client_id);
                                             set_client_name_update(value.client_name);
                                             set_seller_name_update(value.seller_name);
                                             set_sale_status_update(value.sale_status);
                                             document.getElementById('sale_id_update').defaultValue = value.sale_id;
-                                            document.getElementById('sale_total_value_update').defaultValue = value.sale_total_value;
+                                            document.getElementById('sale_total_value_update').defaultValue = value.product_quantity*value.product_unit_value;
                                             document.getElementById('product_id_update').defaultValue = value.product_id;
                                             document.getElementById('product_quantity_update').defaultValue = value.product_quantity;
                                             document.getElementById('product_unit_value_update').defaultValue = value.product_unit_value;
